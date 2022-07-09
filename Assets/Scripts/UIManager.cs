@@ -7,10 +7,10 @@ public class UIManager : MonoBehaviour
 {
     static UIManager instance;                                          //定义实现单例模式的变量
 
-    public TextMeshProUGUI orbText,timeText,deathText,gameOverText;     //设置文本组件
+    public TextMeshProUGUI orbText, timeText, deathText, gameOverText;     //设置文本组件
 
 
-    private void Awake()                                        
+    private void Awake()
     {
         //实现单例模式
         if (instance != null)
@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
     }
-    
+
 
     //实时更新的UI
     public static void UpdateOrbUI(int orbCount)                //更新Orb UI的文本（接收传入的orb数量参数）
@@ -37,9 +37,9 @@ public class UIManager : MonoBehaviour
         //以“分:秒”形式显示时间
         int minutes = (int)(time / 60);                                                 //设置分钟计数方式
         float seconds = time % 60;                                                      //设置秒钟计数方式
-        instance.timeText.text = minutes.ToString("00")+":"+seconds.ToString("00");     //将时间参数转化为String类型，并将参数同步到timeText的文本中
+        instance.timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00");     //将时间参数转化为String类型，并将参数同步到timeText的文本中
     }
-    
+
 
     //需要条件触发的UI
     public static void DisplayGameOver()                        //显示GameOverUI
